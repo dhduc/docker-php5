@@ -18,6 +18,7 @@ services:
       MYSQL_PASSWORD: root123
     volumes:
       - ./mariadb:/var/lib/mysql
+      - ./conf:/etc
   php:
     image: euclid1990/php5.6-fpm
     ports:
@@ -28,6 +29,7 @@ services:
       - mariadb:mysql
   nginx:
     image: nginx
+    hostname: nginx
     ports:
       - "5020:80"
     links:
@@ -43,6 +45,8 @@ services:
       - mariadb:mysql
     ports:
       - 5030:80
+    volumes:
+      - ./conf:/etc  
     environment:
       MYSQL_USERNAME: root
       MYSQL_ROOT_PASSWORD: root123             
