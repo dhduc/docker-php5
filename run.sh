@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker-compose up -d
+# Start the docker compose service
 
 NGINX_HOSTNAME='nginx'
 PROJECT='blog_test.local'
@@ -19,9 +19,7 @@ if [ -z "$IP" ]; then
 	exit 1
 fi
 
-echo
 echo \"$PROJECT\" loaded at $IP
-echo
 
 # update HOSTS file
 echo Attempting to update HOSTS file...

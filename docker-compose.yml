@@ -2,15 +2,15 @@ version: '2'
 services:
   application:
     image: euclid1990/ubuntu-server
-    hostname: blog
+    hostname: blog_server
     volumes:
       - ./blog:/var/www/html/blog
       - ./adminer:/var/www/html/adminer
   mariadb:
     image: mariadb
+    hostname: blog_mysql  
     ports:
       - "5000:3306"
-    hostname: mysql  
     environment:
       MYSQL_ROOT_PASSWORD: root123
       MYSQL_DATABASE: blog
@@ -21,6 +21,7 @@ services:
       - ./var/log/mysql:/var/log/mysql
   php:
     image: euclid1990/php5.6-fpm
+    hostname: blog_php
     ports:
       - "5010:9000"
     volumes_from:
@@ -29,7 +30,7 @@ services:
       - mariadb:mysql
   nginx:
     image: nginx
-    hostname: nginx
+    hostname: blog_nginx
     ports:
       - "5020:80"
     links:
@@ -41,6 +42,7 @@ services:
       - ./nginx_conf:/etc/nginx/conf.d
   phpmyadmin:
     image: corbinu/docker-phpmyadmin
+    hostname: blog_phpmyadmin
     links:
       - mariadb:mysql
     ports:
