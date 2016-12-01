@@ -12,13 +12,13 @@ services:
       - "5000:3306"
     hostname: mysql  
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root123
       MYSQL_DATABASE: blog
       MYSQL_USER: root
       MYSQL_PASSWORD: root123
     volumes:
       - ./mariadb:/var/lib/mysql
-      - ./conf:/etc
+      - ./var/log/mysql:/var/log/mysql
   php:
     image: euclid1990/php5.6-fpm
     ports:
@@ -45,8 +45,6 @@ services:
       - mariadb:mysql
     ports:
       - 5030:80
-    volumes:
-      - ./conf:/etc  
     environment:
       MYSQL_USERNAME: root
       MYSQL_ROOT_PASSWORD: root123             
