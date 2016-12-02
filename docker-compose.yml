@@ -4,8 +4,8 @@ services:
     image: euclid1990/ubuntu-server
     hostname: blog_server
     volumes:
-      - ./blog:/var/www/html/blog
-      - ./adminer:/var/www/html/adminer
+      - ./public/blog:/var/www/html/blog
+      - ./public/adminer:/var/www/html/adminer
   mariadb:
     image: mariadb
     hostname: blog_mysql  
@@ -17,8 +17,8 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: root123
     volumes:
-      - ./mariadb:/var/lib/mysql
-      - ./var/log/mysql:/var/log/mysql
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/logs:/var/log/mysql
   php:
     image: euclid1990/php5.6-fpm
     hostname: blog_php
@@ -38,10 +38,10 @@ services:
     volumes_from:
       - application
     volumes:
-      - ./logs/nginx/:/var/log/nginx
-      - ./nginx_conf:/etc/nginx/conf.d
+      - ./nginx/logs:/var/log/nginx
+      - ./nginx/conf:/etc/nginx/conf.d
   phpmyadmin:
-    image: corbinu/docker-phpmyadmin
+    image: phpmyadmin/phpmyadmin
     hostname: blog_phpmyadmin
     links:
       - mariadb:mysql

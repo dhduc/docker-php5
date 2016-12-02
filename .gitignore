@@ -1,2 +1,4 @@
-logs
-mariadb
+mysql/data
+mysql/logs
+nginx/logs
+public/blog
