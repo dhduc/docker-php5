@@ -2,51 +2,41 @@ version: '2'
 services:
   application:
     image: euclid1990/ubuntu-server
-    hostname: blog_server
+    hostname: server
     volumes:
-      - ./public/blog:/var/www/html/blog
-      - ./public/adminer:/var/www/html/adminer
+      - ./var/www/html:/usr/local/apache2/htdocs/note
   mariadb:
     image: mariadb
-    hostname: blog_mysql  
+    hostname: mysql  
     ports:
       - "5000:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: blog
+      MYSQL_DATABASE: note
       MYSQL_USER: root
       MYSQL_PASSWORD: root123
     volumes:
-      - ./mysql/data:/var/lib/mysql
-      - ./mysql/logs:/var/log/mysql
+      - ./var/lib/mysql:/var/lib/mysql
+      - ./var/log/mysql:/var/log/mysql
   php:
     image: euclid1990/php5.6-fpm
-    hostname: blog_php
+    hostname: php
     ports:
-      - "5010:9000"
+      - "6666:9000"
     volumes_from:
       - application
     links:
       - mariadb:mysql
-  nginx:
-    image: nginx
-    hostname: blog_nginx
+  apache:
+    image: httpd
+    hostname: apache
     ports:
-      - "5020:80"
+      - '7777:80'
+      - '443:443'
     links:
-      - php
+      - php  
     volumes_from:
-      - application
+      - application  
     volumes:
-      - ./nginx/logs:/var/log/nginx
-      - ./nginx/conf:/etc/nginx/conf.d
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    hostname: blog_phpmyadmin
-    links:
-      - mariadb:mysql
-    ports:
-      - 5030:80
-    environment:
-      MYSQL_USERNAME: root
-      MYSQL_ROOT_PASSWORD: root123             
+      - ./var/log/apache2:/var/log/apache2
+      - ./etc/apache2/conf-enabled:/etc/apache2/conf-enabled/    

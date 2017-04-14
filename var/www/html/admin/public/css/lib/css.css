@@ -1,0 +1,338 @@
+@import url("button.css"); 
+/* Link */
+a {
+  color: #07c;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+/* Table */
+table th {
+  text-align: left;
+}  
+/* Form */
+form {
+  margin: auto;  
+  font-family: Helvetica Nue, sans-serif;
+
+}
+
+form h2 {
+  color: #555;
+}
+
+input[type="text"], input[type="password"]{  
+  width: 200px;
+  padding: 7px;
+  outline: 0;  
+  border: solid 1px #E5E5E5;      
+  background-color: #FFFFFF;
+  border-radius: 5px;
+
+}
+textarea {  
+  width: 400px;
+  padding: 9px;
+  outline: 0;  
+  border: solid 1px #E5E5E5;      
+  background-color: #FFFFFF;
+  border-radius: 5px;
+
+}
+
+input:hover, textarea:hover,  
+input:focus, textarea:focus {   
+  border-color: #C9C9C9;   
+}
+
+input:focus, textarea:focus {
+  border: 1px solid #73B8EE;
+  box-shadow: rgba(0,0,0, 0.2) 0px 0px 8px;
+}
+input[type='file'] {
+  position:absolute;
+  z-index:2;
+  top:0;
+  left:0;
+  filter: alpha(opacity=0);
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  opacity:0;
+  background-color:transparent;
+  color:transparent;
+}
+input[type='file']:hover {
+  cursor: pointer;
+}
+
+form label {   
+  margin-left: 10px;   
+  color: #999999;   
+}  
+
+select {
+ width: 100px;
+ font-size: 15px;
+ border: 0;
+ height: 30px;
+ border: solid 1px #E5E5E5;      
+}  
+/* Checkbox */
+input[type="checkbox"] {
+  display:none;
+}
+input[type="checkbox"] + label span {
+  display:inline-block;
+  width:19px;
+  height:19px;
+  margin:-1px 4px 0 0;
+  vertical-align:middle;
+  background:url(../../img/check_radio_sheet.png) left top no-repeat;
+  cursor:pointer;
+}
+input[type="checkbox"]:checked + label span {
+  background:url(../../img/check_radio_sheet.png) -19px top no-repeat;
+}
+/* Table */
+  table.table_list {
+    width: auto;
+  }
+  table.table_list caption {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+    color: #07c;
+    padding: 20px 20px;
+  }
+  table.table_list th {
+    color: #07c;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  table.table_list td {
+    padding: 10px 25px;
+  }
+ /*
+  Button
+  */ 
+  
+  a.button:hover {
+    text-decoration: none;
+  }
+  .label {
+    padding: 5px;
+    color: #00A1CB;
+    border: 1px solid #00A1CB;
+    border-radius: 5px;
+    background: #f5f5f5;
+  }
+
+/*
+  @ Pagination
+  */
+  #pagination {
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+    position: absolute;
+    bottom: 50px;
+  }
+  #pagi_active {
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background: #07c;
+    color: white;
+    text-decoration: none;
+  }
+  #pagi {
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background: white;
+    color: #07c;
+    text-decoration: none;
+  }
+  #pagi:hover {
+    background: #07c;
+    color: white;
+  }
+  #pagination .button {
+    margin-right: 20px;
+    padding: 7px 12px;
+  }
+
+  /* Dialog */
+  .modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+    display: none;
+  }
+
+  .modalDialog:target {
+    opacity:1;
+    display: block;
+    pointer-events: auto;
+  }
+
+  .modalDialog > div {
+    /*min-width: 400px;
+    max-width: 600px;*/
+
+    width: 800px;
+    height: 400px;
+
+    position: relative;
+    margin: 50px auto;
+    padding-bottom: 10px;
+    
+
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+  }
+  .modalDialog > div #modal  {
+    padding: 5px 20px 13px 20px;
+  }
+  .modalDialog #header {
+    background-color: #428bca;
+    min-height: 21px;
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .modalDialog  a.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+    text-decoration: none;
+  }
+  .modalDialog .close {
+    float: right;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+  }
+
+  .title {
+    color: #07c;
+    font-size: 20px;
+  }
+
+  .modalNotification {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.45);
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    
+  }
+
+  
+
+  .modalNotification > div {
+    min-width: 400px;
+    max-width: 600px;
+    max-height: 400px;
+    position: relative;
+    margin: 100px auto;
+    padding-bottom: 30px;
+    
+
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+
+    position: relative;
+    z-index: 9999;
+  }
+  .modalNotification > div #modal  {
+    padding: 5px 20px 13px 20px;
+  }
+  .modalNotification #header {
+    background-color: #428bca;
+    min-height: 21px;
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .modalNotification  a.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+    text-decoration: none;
+  }
+  .modalNotification .close {
+    float: right;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+  }
+  .alert {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 380px;
+    font-weight: bold;
+  }
+
+  table tr td{
+    padding: 10px 0px;
+    margin: 10px 0px;
+  }

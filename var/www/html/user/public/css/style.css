@@ -1,0 +1,84 @@
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+}
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:300);
+
+body
+{
+  margin:0px;
+  padding:0px;
+	font-family: "Open Sans", arial;
+	color:#fff;
+	font-weight:300;
+
+}
+
+#logo {
+	padding-top: 30px;
+	margin-top: 30px;
+}
+
+#main {
+float: left;
+margin-left: 250px;
+height: 100%;
+color: black;
+padding: 20px 30px;
+}
+
+
+input[name="inp_search"]{
+	width: 350px;
+}
+
+table#tableDashboard {
+	margin: 50px 0 0 0;
+}
+table#tableDashboard tr td {
+	padding: 20px;
+	margin: 10px;
+	border: 1px dashed #41A85F;
+	border-radius: 10px;
+}
+table#tableDashboard td h3 a {
+	color: #7C706B;
+}
+
+#modal {
+	margin: 10px auto;
+}
+span#box a {
+	border: 1px solid #A38F84;
+	border-radius: 5px;
+	padding: 5px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+span#box:hover a{
+	background: #A38F84;
+	color: #fff;
+}
+
+#tag {
+							border: 1px solid #A38F84;
+									border-radius: 5px;
+									padding: 5px;
+									margin-left: 10px;
+								}
+								.tag_text {
+									display: none;
+								}
+#post_title {
+	width: 500px;
+}
+
+#tag a {
+									border: 1px solid #A38F84;
+									border-radius: 5px;
+									padding: 5px;
+									margin-left: 10px;
+									cursor: pointer;
+								}
+								#tag:hover a{
+									background: #A38F84;
+									color: #fff;
+								}

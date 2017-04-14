@@ -1,0 +1,149 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Lucida Grande, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+}
+#page {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    margin: 0 150px;
+}
+#banner {}
+#header {
+    height: 150px;
+    vertical-align: middle;
+    padding-top: 10px;
+}
+
+/* @home */
+
+#home {
+    float: left;
+    width: 30%;
+}
+#home h1 {
+    margin-bottom: 0;
+}
+#homepage {
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 0;
+}
+#homepage span:first-child { color: #FF6850; }
+#homepage span:last-child { color: #9A9A9A; }
+#slogan {
+    margin-top: 0;
+    margin-left: 20px;
+}
+
+/* @search */
+#search {
+    padding: 20px;
+    //margin-left: 30%;
+    padding-top: 25px;
+    width: 400px;
+    margin-right: 0;
+    float: left;
+}
+#search input[type="text"] {
+    width: 300px;
+}
+
+/* @ user */
+#user {
+    width: 150px;
+    float: left;
+    padding-top: 30px;
+
+}
+/*
+    User button
+*/
+div.dropdown {
+color: #555;
+margin: 3px -22px 0 0;
+width: 143px;
+position: relative;
+height: 17px;
+text-align:left;
+}
+div.submenu
+{
+background: #fff;
+position: absolute;
+top: -12px;
+left: -20px;
+z-index: 100;
+width: 135px;
+display: none;
+margin-left: 10px;
+padding: 40px 0 5px;
+border-radius: 6px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.dropdown  li a {
+   
+    color: #555555;
+    display: block;
+    font-family: arial;
+    font-weight: bold;
+    padding: 6px 15px;
+  cursor: pointer;
+text-decoration:none;
+}
+
+.dropdown li a:hover{
+    background:#155FB0;
+    color: #FFFFFF;
+    text-decoration: none;
+    
+}
+a.account {
+    font-size: 15px;
+    line-height: 16px;
+    color: #555;
+    position: absolute;
+    z-index: 110;
+    display: block;
+    padding: 11px 0 0 20px;
+    height: 28px;
+    width: 121px;
+    margin: -11px 0 0 -10px;
+    text-decoration: none;
+    background: url(../img/arrow.png) 116px 17px no-repeat;
+    cursor:pointer;
+
+}
+.root
+{
+    list-style:none;
+    margin:0px;
+    padding:0px;
+    font-size: 11px;
+    padding: 11px 0 0 0px;
+    border-top:1px solid #dedede;   
+}
+/* @ cart */
+#cart {
+    width: 100px;
+    float: left;
+    padding-top: 33px;
+
+}
+a.cart {
+    font-size: 15px;
+    line-height: 16px;
+    color: #555;
+    display: block;
+    height: 28px;
+    width: 121px;
+    text-decoration: none;
+    cursor:pointer;
+}
+#cart a:hover {
+    color: #07c;
+}
+

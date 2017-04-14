@@ -1,0 +1,53 @@
+ @import url("lib/css.css");
+ @import url("lib/button.css");
+ body {
+  padding: 0; /* Gets rid of the automatic padding */
+  margin: 0;  /*  on HTML documents */
+  font-family: Lucida Grande, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+#wrap {
+  width: 500px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.box {
+  padding: 25px;
+  background-color: #F9F9F9;
+  border-radius: 5px;
+  box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+}
+#error {
+  margin-left: 10px;
+  color: red;
+}
+
+.alert_error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 480px;
+  margin: 10px auto;
+  font-weight: bold;
+}
+
+
+/* Sign up */
+#signupMsg {
+  padding-left: 20px;
+}
+.response-waiting {
+  background:url("../img/loading.gif") no-repeat;
+}
+
+.response-success {
+  background:url("../img/tick.png") no-repeat;
+}
+
+.response-error {
+  background:url("../img/cross.png") no-repeat;
+}

@@ -1,0 +1,148 @@
+/*
+  Link
+  */
+  a {
+    color: #07c;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+/*
+  Form
+  */
+  form {
+    margin: auto;  
+    font-family: Helvetica Nue, sans-serif;
+
+  }
+
+  form h2 {
+    color: #555;
+  }
+
+  input[type="text"], input[type="password"]{  
+    width: 200px;
+    padding: 7px;
+    outline: 0;  
+    border: solid 1px #E5E5E5;      
+    background-color: #FFFFFF;
+    border-radius: 5px;
+
+  }
+  textarea {  
+    width: 400px;
+    padding: 9px;
+    outline: 0;  
+    border: solid 1px #E5E5E5;      
+    background-color: #FFFFFF;
+    border-radius: 5px;
+
+  }
+
+  input:hover, textarea:hover,  
+  input:focus, textarea:focus {   
+    border-color: #C9C9C9;   
+  }
+
+  input:focus, textarea:focus {
+    border: 1px solid #73B8EE;
+    box-shadow: rgba(0,0,0, 0.2) 0px 0px 8px;
+  }
+  input[type='file'] {
+    position:absolute;
+    z-index:2;
+    top:0;
+    left:0;
+    filter: alpha(opacity=0);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    opacity:0;
+    background-color:transparent;
+    color:transparent;
+  }
+  input[type='file']:hover {
+    cursor: pointer;
+  }
+  
+  form label {   
+    margin-left: 10px;   
+    color: #999999;   
+  }  
+
+  select {
+   width: 100px;
+   font-size: 15px;
+   border: 0;
+   height: 30px;
+   border: solid 1px #E5E5E5;      
+ }  
+
+/*
+  Table
+  */
+  table.table_list {
+    width: auto;
+  }
+  table.table_list caption {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+    color: #07c;
+    padding: 20px 20px;
+  }
+  table.table_list th {
+    color: #07c;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  table.table_list td {
+    padding: 10px 25px;
+  }
+ /*
+  Button
+  */ 
+  
+  a.button:hover {
+    text-decoration: none;
+  }
+  .label {
+    padding: 5px;
+    color: #00A1CB;
+    border: 1px solid #00A1CB;
+    border-radius: 5px;
+    background: #f5f5f5;
+  }
+
+/*
+  @ Pagination
+*/
+#pagination {
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+#pagi_active {
+  width: 15px;
+  height: 15px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  background: #07c;
+  color: white;
+  text-decoration: none;
+}
+#pagi {
+  width: 15px;
+  height: 15px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  background: white;
+  color: #07c;
+  text-decoration: none;
+}
+#pagi:hover {
+  background: #07c;
+  color: white;
+}
