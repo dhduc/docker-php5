@@ -4,7 +4,7 @@ services:
     image: euclid1990/ubuntu-server
     hostname: server
     volumes:
-      - ./var/www/html:/usr/local/apache2/htdocs/note
+      - ./var/www/html:/opt/bitnami/apache/htdocs/note
   mariadb:
     image: mariadb
     hostname: mysql  
@@ -28,7 +28,7 @@ services:
     links:
       - mariadb:mysql
   apache:
-    image: httpd
+    image: bitnami/apache:latest
     hostname: apache
     ports:
       - '7777:80'
@@ -39,4 +39,4 @@ services:
       - application  
     volumes:
       - ./var/log/apache2:/var/log/apache2
-      - ./etc/apache2/conf-enabled:/etc/apache2/conf-enabled/    
+      - ./etc/apache2/conf-enabled:/bitnami/apache/conf/vhosts

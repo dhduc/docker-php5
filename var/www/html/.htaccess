@@ -5,3 +5,14 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l
 
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+DirectoryIndex index.php index.html index.htm
+
+<FilesMatch ".+\.html$">
+    SetHandler application/x-httpd-php
+</FilesMatch>
+
+# If we know how to do it safely, disable the PHP engine entirely.
+<IfModule mod_php5.c>
+  php_flag engine off
+</IfModule>

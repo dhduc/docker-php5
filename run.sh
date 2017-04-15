@@ -16,7 +16,7 @@ NORMAL=`tput sgr0`
 BOLD=`tput bold`
 
 apache_conf() {
-	SERVER_CONTAINER_ID=$(docker ps | grep 'httpd' | awk '{print $1}')
+	SERVER_CONTAINER_ID=$(docker ps | grep 'bitnami/apache' | awk '{print $1}')
 	if [ -z "$SERVER_CONTAINER_ID" ]; then
 		echo $RED ERROR: Container \"$PROJECT\" could not be started. $ENDC
 		exit 1
