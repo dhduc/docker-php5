@@ -1,12 +1,10 @@
 #!/bin/bash
 
-PROJECT='note.local'
-WEB='note'
-MYSQL_ROOT_PASSWORD='root123'
+PROJECT='php5.local'
+MYSQL_ROOT_PASSWORD='root'
 MYSQL_DATABASE='note'
 MYSQL_USER='root'
-MYSQL_PASSWORD='root123'
-ADMINER_PORT='8080'
+MYSQL_PASSWORD='root'
 
 ENDC=`tput setaf 7`
 RED=`tput setaf 1`
@@ -15,8 +13,8 @@ YELLOW=`tput setaf 3`
 NORMAL=`tput sgr0`
 BOLD=`tput bold`
 
-apache_conf() {
-	SERVER_CONTAINER_ID=$(docker ps | grep 'bitnami/apache' | awk '{print $1}')
+nginx_conf() {
+	SERVER_CONTAINER_ID=$(docker ps | grep 'nginx' | awk '{print $1}')
 	if [ -z "$SERVER_CONTAINER_ID" ]; then
 		echo $RED ERROR: Container \"$PROJECT\" could not be started. $ENDC
 		exit 1
@@ -46,7 +44,7 @@ apache_conf() {
 	echo $GREEN http://$PROJECT loaded at $IP $ENDC
 }
 
-web_config() {
+mysql_conf() {
 	MARIADB_ID=$(docker ps | grep 'mariadb' | awk '{print $1}')
 	if [ -z "$MARIADB_ID" ]; then
 		echo $RED ERROR: Could not start MySQL container. $ENDC
@@ -62,5 +60,5 @@ web_config() {
 	echo $GREEN MySQL server loaded at $DB_IP $ENDC
 }
 
-apache_conf
-web_config
+nginx_conf
+mysql_conf

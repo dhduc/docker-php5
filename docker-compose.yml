@@ -4,39 +4,38 @@ services:
     image: euclid1990/ubuntu-server
     hostname: server
     volumes:
-      - ./var/www/html:/opt/bitnami/apache/htdocs/note
+      - ./var/www/html:/var/www/html
   mariadb:
     image: mariadb
     hostname: mysql  
     ports:
       - "5000:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: note
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: php5
       MYSQL_USER: root
-      MYSQL_PASSWORD: root123
+      MYSQL_PASSWORD: root
     volumes:
-      - ./var/lib/mysql:/var/lib/mysql
+      - ./mysql/data:/mysql/data
       - ./var/log/mysql:/var/log/mysql
   php:
     image: euclid1990/php5.6-fpm
     hostname: php
     ports:
-      - "6666:9000"
+      - "5050:9000"
     volumes_from:
       - application
     links:
       - mariadb:mysql
-  apache:
-    image: bitnami/apache:latest
-    hostname: apache
+  nginx:
+    image: nginx
+    hostname: nginx
     ports:
-      - '7777:80'
-      - '443:443'
+      - "5555:80"
     links:
-      - php  
+      - php
     volumes_from:
-      - application  
+      - application
     volumes:
-      - ./var/log/apache2:/var/log/apache2
-      - ./etc/apache2/conf-enabled:/bitnami/apache/conf/vhosts
+      - ./var/log/nginx:/var/log/nginx
+      - ./etc/nginx/conf.d:/etc/nginx/conf.d
