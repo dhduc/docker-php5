@@ -45,7 +45,7 @@ class Bootstrap {
 
 	private function _getUrl(){
 		$url = isset($_GET['url']) ? $_GET['url'] : null;
-		$url = rtrim($url, '/');
+		$url = trim($url, '/');
 		$url = filter_var($url, FILTER_SANITIZE_URL);
 		$this->_url = explode('/', $url);
 		// var_dump($this->_url);

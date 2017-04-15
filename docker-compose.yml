@@ -18,6 +18,7 @@ services:
     volumes:
       - ./mysql/data:/mysql/data
       - ./var/log/mysql:/var/log/mysql
+      # - ./etc/mysql:/etc/mysql
   php:
     image: euclid1990/php5.6-fpm
     hostname: php

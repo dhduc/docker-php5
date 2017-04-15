@@ -2,7 +2,7 @@
 
 PROJECT='php5.local'
 MYSQL_ROOT_PASSWORD='root'
-MYSQL_DATABASE='note'
+MYSQL_DATABASE='php5'
 MYSQL_USER='root'
 MYSQL_PASSWORD='root'
 
@@ -55,6 +55,10 @@ mysql_conf() {
 	if [ -z "$IP" ]; then
 		echo $RED ERROR: Could not find the IP address of MySQL container $ENDC
 		exit 1
+	fi
+
+	if [ -s 'var/www/html/config.php' ]; then
+		perl -pi -e "s/host_here/$DB_IP/g" var/www/html/config.php
 	fi
 
 	echo $GREEN MySQL server loaded at $DB_IP $ENDC

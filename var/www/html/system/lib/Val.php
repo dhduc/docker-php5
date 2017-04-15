@@ -4,7 +4,7 @@ class Val {
 		$data = trim($data);
 		$data = htmlentities($data);
 		// $data = htmlspecialchars($data);
-		$data = mysql_real_escape_string($data);
+		// $data = mysql_real_escape_string($data);
 		return $data;
 	}
 }

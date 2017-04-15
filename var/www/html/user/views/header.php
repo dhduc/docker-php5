@@ -5,7 +5,7 @@
 </div> 
 <div class="settings">
   <a href="<?=SITE?>/user/dashboard" id="logo">
-        <i class="fa fa-ils fa-lg"></i>
+        <i class="fa fa-book fa-lg"></i>
         <span class="nav-text">NOTE</span>
   </a>
 </div>
