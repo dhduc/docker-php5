@@ -14,9 +14,3 @@ Note project using Docker
 docker-compose up
 docker-compose stop
 ```
-
-## SSH
-
-```
-docker exec -it dockerphp5_apache_1 /bin/bash
-```
