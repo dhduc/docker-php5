@@ -11,7 +11,7 @@ Note project using Docker
 ## Docker
 
 ```
-docker-composer up
+docker-compose up
 docker-compose stop
 ```
 
