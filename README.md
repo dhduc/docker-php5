@@ -4,7 +4,7 @@ Docker PHP 5.6
 Note project using Docker
 
 - Ubuntu
-- Apache
+- Nginx
 - MariaDB
 - PHP 5.6
 
